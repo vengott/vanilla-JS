@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+	<!--Click and Key code info -->
 	<div class="keys">
 		<div data-key="65" class="key">
 			<kbd>A</kbd>
@@ -54,6 +54,7 @@
 		</div>
 	</div>
 
+<!-- Audio file link to the Keycode -->
 <audio data-key="65" src="sounds/clap.wav"></audio>
 <audio data-key="83" src="sounds/hihat.wav"></audio>
 <audio data-key="68" src="sounds/boom.wav"></audio>
@@ -67,11 +68,13 @@
 
 <script>
 
+	//function for the screen visuals 
 	function removeTransition(e) {
 		if (e.propertyName !== 'transform') return;
 		e.target.classList.remove('playing');
 	}
 
+	//Audio trigger function
 	function playSound(e) {
 		const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
 		const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
@@ -87,6 +90,8 @@
 		console.log(e);
 		console.log(e.keyCode);
 		};*/
+
+	//Event listener
 		const keys = Array.from(document.querySelectorAll('.key'));
 		keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 		window.addEventListener('keydown', playSound);//function(e)
