@@ -68,15 +68,23 @@
 
   <script>
     const sechand = document.querySelector('.sec-hand');
+    const minhand = document.querySelector('.min-hand');
+    const hrhand = document.querySelector('.hr-hand');
 
     function setDate(){
       const now = new Date();
       const secs = now.getSeconds();
-      const secsDegree = ((secs/60)*360);
+      const secsDegree = ((secs/60)*360)+90;
       sechand.style.transform = `rotate(${secsDegree}deg)`;
-      // const mins = now.getMinutes();
-      // const hrs = now.getHours();
-      console.log(secs);
+      const mins = now.getMinutes();
+      const minsDegree = ((mins/60)*360)+90;
+      minhand.style.transform = `rotate(${minsDegree}deg)`;
+      const hrs = now.getHours();
+      const hrsDegree = ((hrs/12)*360)+90;
+      hrhand.style.transform = `rotate(${hrsDegree}deg)`;
+      //console.log(secsDegree);
+      //console.log(minsDegree);
+      //console.log(hrsDegree);
 
     }
     setInterval(setDate,1000);
