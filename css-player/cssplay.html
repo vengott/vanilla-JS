@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Scoping</title>
+  </head>
+  <body>
+    <h2>Playing with <span class='h1'>FLEXZIBLE! </span> options</h2>
+    <div class="controls">
+      <label for="spacing">spacing</label>
+      <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+
+      <label for="blur">Blur</label>
+      <input type="range" name="blur" min="1" max="10" value="2" data-sizing="px">
+
+      <label for="basecolor">Base Color</label>
+      <input type="range" name="basecolor" value="#009900">
+    </div>
+
+    <img src="https://picsum.photos/id/237/800/500" alt="Doggo">
+
+    <style media="screen">
+      body{
+        text-align: center;
+        background: #193459;
+        color: gray;
+        font-family: 'helvetica';
+        font-size: 30px;
+        font-weight: 50;
+      }
+      .controls{
+        margin-bottom: 50px;
+      }
+      input{
+        width:100px
+      }
+
+    </style>
+  </body>
+</html>
