@@ -10,8 +10,11 @@
     <script type="text/javascript">
     //...Stuck here
       const inventors = [
-        {first: 'Ady', last: 'Vengott', year: '1993', passed: 'Not Yet'},
-        {first: 'Leel', last: 'Vengott', year: '1993', passed: 'Not Yet'},
+        {first: 'Ady', last: 'Vengott', year: '1993', passed: '-1993'},
+        {first: 'Leel', last: 'Vengott', year: '1993', passed: '2093'},
+        {first: 'Venu', last: 'Gottapu', year: '1954', passed: '1998'},
+        {first: 'Nani', last: 'Gott', year: '1940', passed: '2016'},
+        {first: 'Tatha', last: 'Pudi', year: '1940', passed: '1997'}
       ];
 
       const people = ['Aditya, Got Ven', 'Ven, Gott'];
@@ -20,26 +23,68 @@
       //1, Filter the list of inventors for those born at some date
       //Using an if block
       const ninthreeo = inventors.filter(function(inventors) {
-        if(inventors.year >= 1500 && inventors.year == 1993){
+        if(inventors.year >= 1990 && inventors.year == 1993){
           return true;
         }
       });
-      console.table(ninthreeo);
+      //console.table(ninthreeo);
       //Using Arrow function
       const ninthree = inventors.filter(inventors => (inventors.year >= 1500 && inventors.year == 1993));
-      console.table(ninthree);
+      //console.table(ninthree);
 
       //Arraoy.prototype.map()
       //2. Give us an array of the invntors first and last names
       //Using variable mapping
       const fullname = inventors.map(inventors => (inventors.first + ' ' + inventors.last));
-      console.log(fullname);
+      //console.log(fullname);
       //Using backtext and string function
       const fullnameb = inventors.map(inventors => `${inventors.first} ${inventors.last}`);
-      console.log(fullnameb);
+      //console.log(fullnameb);
       //Add more functions here
+
+      //Array.prototype.sort()
+      //3. Sort the inventors by year lived or Age
+      const lived = inventors.map(inventors => inventors.passed - inventors.year);
+      const liveord = inventors.sort(function(a, b){
+        if((a.passed - a.year)  > (b.passed - b.year)){
+          return 1;
+        } else{
+          return -1;
+        }
+      });
+      //console.table(liveord);
+      //Short version: Using the terinary operator
+      const liveordrd = inventors.sort((a,b)=>(a.passed - a.year) > (b.passed - b.year) ? 1 : -1);
+      //console.table(liveordrd);
+
+      //Array.prototype.reduce()
+      //4. How many years did all the inventors live?
+      const totalyears = inventors.reduce((total, inventors) => {
+        return total + (inventors.passed - inventors.year);
+      }, 0);
+      console.log(totalyears);
+
+      //5. Sort the inventors by years lived
+      const wiser = inventors.sort(function(a,b){
+        const finest = a.passed - a.year;
+        const next = b.passed - b.year;
+        return finest > next ? 1 : -1;
+      });
+      console.table(wiser);
+
+      //6. Create a list of boulevards in Paris that contain 'de' anywhere in the name
+      //
+
+
+      //7. Sort exercise
+      //Sort the people alphabetically by last names
+
+      //8. Reduce exercise
+      //Sum up the instances of each of these
       const data = ['bike', 'motorbike', 'motorbike', 'motorcycle', 'car', 'walk'];
-      //To complete this block
+
+
+
     </script>
   </body>
 </html>
