@@ -1,0 +1,11 @@
+#canvas {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+}
+
+#button{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+}
+    /* <button type = "button" style= "top: canvas.width; position: absolute; z-index: 4; background-color: brown;">bottom</button> */
